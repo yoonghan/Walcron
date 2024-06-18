@@ -20,7 +20,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.4.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@react-spring/web": "^9.6.1",
-    "backstopjs": "^6.1.1",
+    "backstopjs": "^6.3.23",
     "cookies-next": "^2.1.1",
     "firebase-admin": "^12.0.0",
     "jest-css-modules-transform": "^4.4.2",
