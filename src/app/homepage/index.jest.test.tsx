@@ -1,11 +1,11 @@
 import { render, screen, waitFor, within } from "@testing-library/react"
 import "@/__tests__/mocks/routerMock"
-import Home from "./main"
+import HomePage from "."
 import UserEvent from "@testing-library/user-event"
 
-describe("Home", () => {
+describe("HomePage", () => {
   const renderComponent = () => {
-    render(<Home />)
+    render(<HomePage />)
   }
 
   const assertSocialFab = async () => {
@@ -20,7 +20,7 @@ describe("Home", () => {
   it("should be able to click on the cookie button", async () => {
     const cookieText = "This site uses cookies."
 
-    render(<Home />)
+    renderComponent()
     const cookieSection = screen.getByTestId("cookie-dialog")
     expect(within(cookieSection).getByText(cookieText)).toBeInTheDocument()
     UserEvent.click(
@@ -36,7 +36,7 @@ describe("Home", () => {
   describe("able to navigate", () => {
     it("should have the following links", async () => {
       window.innerHeight = 500
-      render(<Home />)
+      renderComponent()
 
       const navigation = within(
         screen.getByRole("navigation", {
@@ -80,7 +80,7 @@ describe("Home", () => {
     })
 
     it("should return to top once clicked or keyed", async () => {
-      render(<Home />)
+      renderComponent()
 
       const scrollToFn = jest.fn()
       // eslint-disable-next-line testing-library/no-node-access

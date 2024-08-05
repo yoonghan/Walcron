@@ -1,7 +1,7 @@
-import IndexLayer2 from "./homepage/page-layer2"
+import HomePage from "./homepage"
 
 const Index = () => {
-  return <IndexLayer2 />
+  return <HomePage />
 }
 
 export default Index
