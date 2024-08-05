@@ -6,14 +6,10 @@ import styles from "./Homepage.module.css"
 import { useMemo, useRef } from "react"
 import PageReaderIndicator from "@/components/PageReaderIndicator"
 import SocialFab from "@/components/SocialFab"
-import Cookie from "@/components/Cookie"
+import ClientCookie from "@/components/ClientCookie"
 import LetterBox from "@/components/LetterBox"
 
-interface Props {
-  termsRead: boolean
-}
-
-function Homepage({ termsRead }: Props) {
+function Homepage() {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const scrollHandlerRef = useRef<ScrollHandler>(null)
 
@@ -59,7 +55,7 @@ function Homepage({ termsRead }: Props) {
         </div>
         <SocialFab />
       </main>
-      <Cookie isClosed={termsRead} cookieName={"termsRead"} />
+      <ClientCookie />
     </div>
   )
 }
